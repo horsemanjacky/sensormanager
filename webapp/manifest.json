@@ -1,0 +1,94 @@
+{
+    "_version": "1.21.0",
+    "sap.app": {
+        "id": "keepcool.sensormanager",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "${version}"
+        },
+        "sourceTemplate": {
+            "id": "generator-ui5-ts-app",
+            "version": "1.1.0"
+        },
+        "dataSources": {
+            "sensorSource": {
+                "type": "JSON",
+                "uri": "./localService/sensors.json"
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {},
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "keepcool.sensormanager.view.App",
+            "type": "XML",
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.140.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "handleValidation": true,
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "sensorModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "sensorSource"
+            },
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "keepcool.sensormanager.i18n.i18n",
+                    "supportedLocales": [
+                        "en",
+                        "de"
+                    ],
+                    "fallbackLocale": "en",
+                    "async": true
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "type": "View",
+                "viewType": "XML",
+                "path": "keepcool.sensormanager.view",
+                "controlId": "app",
+                "controlAggregation": "pages"
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "sensors",
+                    "target": "sensors"
+                }
+            ],
+            "targets": {
+                "sensors": {
+                    "id": "sensors",
+                    "name": "Sensors"
+                }
+            }
+        }
+    }
+}
