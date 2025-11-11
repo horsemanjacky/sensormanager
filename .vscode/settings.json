@@ -1,7 +1,0 @@
-{
-	"editor.detectIndentation": false,
-	"editor.tabSize": 4,
-	"editor.formatOnPaste": true,
-	"editor.formatOnSave": true,
-	"idf.pythonInstallPath": "/usr/bin/python3"
-}
