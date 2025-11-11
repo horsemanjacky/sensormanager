@@ -20,6 +20,11 @@
                 press=".onCustomerSelect"
                 tooltip="{i18n>toolTipSelectCustomer}"
             />
+            <Button
+                text="Go to Sensor Status"
+                press=".onNavToSensorStatus"
+                tooltip="Navigate to Sensor Status"
+            />
         </headerContent>
         <content>
             <IconTabBar
@@ -58,19 +63,19 @@
                     <f:GridList
                         id="sensorsList"
                         items="{
-							path: 'sensorModel>/sensors',
-							sorter: {
-								path:'customer',
+						path: 'sensorModel>/sensors',
+						sorter: {
+							path:'customer',
                                 group: true,
-								descending: false
-								}
-							}"
+							descending: false
+							}
+						}"
                     >
                         <f:customLayout>
                             <grid:GridBoxLayout />
                         </f:customLayout>
                         <f:items>
-                            <CustomListItem type="Active">
+                            <CustomListItem type="Active" press=".navToSensorStatus">
                                 <layoutData>
                                     <FlexItemData
                                         growFactor="1"

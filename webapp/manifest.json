@@ -11,7 +11,8 @@
         },
         "sourceTemplate": {
             "id": "generator-ui5-ts-app",
-            "version": "1.1.0"
+            "version": "1.1.0",
+            "toolsId": "2167403f-56f0-4740-b9ac-62a8aeee713a"
         },
         "dataSources": {
             "sensorSource": {
@@ -81,12 +82,24 @@
                     "pattern": "",
                     "name": "sensors",
                     "target": "sensors"
+                },
+                {
+                    "pattern": "sensor/{index}",
+                    "name": "sensorStatus",
+                    "target": [
+                        "sensorStatus"
+                    ]
                 }
             ],
             "targets": {
                 "sensors": {
                     "id": "sensors",
                     "name": "Sensors"
+                },
+                "sensorStatus": {
+                    "id": "sensorStatus",
+                    "name": "SensorStatus",
+                    "viewLevel": 2
                 }
             }
         }
